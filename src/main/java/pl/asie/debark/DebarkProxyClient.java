@@ -132,9 +132,13 @@ public class DebarkProxyClient extends DebarkProxyCommon {
                 } else {
                     event.getMap().setTextureEntry(new StrippedBarkColoredSprite(blockSide.toString(), logTopLocation, logSideLocation));
                 }
+            } else {
+                event.getMap().registerSprite(blockSide);
             }
             if (!ResourceUtils.textureExists(blockTop)) {
                 event.getMap().setTextureEntry(new LogColoredSprite(blockTop.toString(), logTopLocation, templateTop));
+            } else {
+                event.getMap().registerSprite(blockTop);
             }
         });
     }
